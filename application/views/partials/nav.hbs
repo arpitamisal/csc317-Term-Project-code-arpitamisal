@@ -16,16 +16,16 @@
 
 	<div class="search-bar" >
 		<form form class="search-bar" 
-		style="display:flex; width:100%; align:right;"
+		style="display:flex; width:100%; padding-left:1050px; "
 		method="GET"
 		action="/posts/search"
 		enctype="application/x-www-form-urlencoded">
-			<input id ="search-text" style="width: 300px;font-size: 25px;" 
+			<input id ="search-text" style="width:200px; height:25px; font-size: 16px;" 
 			class="search-text" placeholder="Search.." name="searchTerm" 
 			type="text" value="{{searchValue}}"/>
 			{{!-- <div class="search-button fas fa-search"></div> --}}
-			<button style="display: inline-block;padding: 20px;background-color:rgb(30, 145, 238);"
-			 type="submit" ><i class="fa fa-search" style="background-color: white;"></i></button> 
+			<button style="display: inline-block;padding:5px; width:60px; background-color:rgb(30, 145, 238);color:white;"
+			 type="submit" ><i class="fa fa-search" style="background-color: white;"></i>Search</button> 
 		</form>
 	</div>
 	

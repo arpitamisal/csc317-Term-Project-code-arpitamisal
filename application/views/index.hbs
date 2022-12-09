@@ -3,10 +3,10 @@
 		    <div id="ajaxValue"><div id="post"></div> </div> --}}
 		{{#each results}}
 			<div class = "cards" >
-				<img src = "/{{this.thumbnail}}" alt = "">
-				<p>Title: {{this.title}}</p>
-				<p>Description: {{this.description}}</p>
-				<a href="/posts/{{this.id}}">Details</a>
+				<img style="width:150px;" src = "/{{this.thumbnail}}" alt = "">
+				<p><strong style="font-family:'Georgia',serif; font-size: 14px;">Title:</strong> {{this.title}}</p>
+				<p><strong style="font-family:'Georgia',serif; font-size: 14px;">Description:</strong> {{this.description}}</p>
+				<a style="text-decoration:underline; color:blue" href="/posts/{{this.id}}"><strong style="font-family:'Georgia',serif; font-size: 14px;">Details</strong></a>
 				<br></br>
 			</div>
 		{{/each}} 
