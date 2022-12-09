@@ -12,6 +12,8 @@ const flash = require('express-flash');
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const postRouter = require("./routes/posts");
+const commentsRouter = require('./routes/comments');
 
 const app = express();
 
@@ -25,6 +27,12 @@ app.engine(
     helpers: {
       nonEmptyObject: function(obj){
         return !(obj && obj.constructor === Object && Object.keys(obj).length == 0);
+      },
+      formatDate: function(dateString){
+        return new Date(dateString).toLocaleString("en-US",{
+          timeStyle: "long",
+          dateStyle: "long"
+        });
       }
     }, //adding new helpers to handlebars for extra functionality
   })
@@ -66,8 +74,10 @@ app.use(function(req,res,next){
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
+app.use("/posts/", postRouter);
+app.use("/comments", commentsRouter);
 
-
+// app.use("/posts/search", postRouter);
 /**
  * Catch all route, if we get to here then the 
  * resource requested could not be found.

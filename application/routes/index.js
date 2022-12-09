@@ -1,9 +1,11 @@
 var express = require('express');
 const {isLoggedIn} = require('../middleware/protectors');
+const {getRecentPosts, getPostById} = require('../middleware/posts');
 var router = express.Router();
-
+const db = require('../conf/database');
 /* GET home page. */
-router.get('/', function(req, res, next) {
+
+router.get('/', getRecentPosts , function(req, res, next) {
   res.render('index', { title: 'CSC 317 App', name:"[Insert your name here]", css:["stylesheet.css"],
     js:["indexscript.js"]});
 });
@@ -20,8 +22,18 @@ router.get("/postimage", isLoggedIn, function(reg,res){
   res.render('postimage', {css:["stylesheet.css"]});
 });
 
-router.get("/posts/:id",function(reg,res){
-  res.render('viewpost', {css:["stylesheet.css"]});
+// router.get("/posts/search", function(req,res){
+//   console.log(req.params);
+//   res.render('index', { title: 'CSC 317 App', name:"[Insert your name here]", css:["stylesheet.css"],
+//   js:["indexscript.js"]});
+// });
+
+  
+
+
+router.get("/posts/:id(\\d+)", getPostById, function(req,res){
+  console.log(req.params);
+  res.render('viewpost', {css:["stylesheet.css"], js:["viewpost.js"]});
 });
 
 module.exports = router;

@@ -1,4 +1,14 @@
 	<div class="content">
-		<div> <p>There are <span id="counter"></span> photo(s) being shown:</p></div>
-		    <div id="ajaxValue"><div id="post"></div> </div>
+		{{!-- <div> <p>There are <span id="counter"></span> photo(s) being shown:</p></div>
+		    <div id="ajaxValue"><div id="post"></div> </div> --}}
+		{{#each results}}
+			<div class = "cards" >
+				<img src = "/{{this.thumbnail}}" alt = "">
+				<p>Title: {{this.title}}</p>
+				<p>Description: {{this.description}}</p>
+				<a href="/posts/{{this.id}}">Details</a>
+				<br></br>
+			</div>
+		{{/each}} 
+		
 	</div>
