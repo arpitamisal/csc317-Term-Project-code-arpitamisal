@@ -18,10 +18,13 @@ Please follow the instructions below and fill in the information requested when 
 
 # Build/Run Instructions
 
-## Build Instructions
-1. npm install
+# Link to Web Application 
+http://localhost:3000/
 
+## Build Instructions
+1. steps here
+2. steps here
 
 ## Run Instructions
-1. npm start
-
+1. steps here
+2. steps here 
